@@ -1,0 +1,27 @@
+@startuml Linear_Binary_C4_Level1
+
+title Linear and Binary Search - C4 Level 1
+
+skinparam shadowing false
+skinparam rectangle {
+    RoundCorner 15
+}
+
+actor "Student" as student
+
+rectangle "Linear and Binary Search System" as system {
+    rectangle "Python Search Programs" as programs
+}
+
+rectangle "Python Environment" as python
+
+student --> system : Uses
+system --> python : Runs on
+
+note right of system
+Linear Search
+Binary Search
+Time Complexity Analysis
+end note
+
+@enduml

@@ -1,0 +1,84 @@
+```plantuml
+@startuml Linear_Binary_Level4
+
+title Linear and Binary Search - C4 Level 4 (Code)
+left to right direction
+
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam defaultTextAlignment center
+
+package "linear_search.py" {
+
+    class LinearSearch {
+        +linear_search(arr, target)
+        --
+        arr : list of elements
+        target : element to find
+        i : loop index
+        --
+        Compare each element
+        Return index or -1
+    }
+
+    class LinearInput {
+        +read_array()
+        +read_target()
+    }
+
+    class LinearOutput {
+        +display_result()
+    }
+
+    LinearInput --> LinearSearch : Calls
+    LinearSearch --> LinearOutput : Returns index
+}
+
+package "binary_search.py" {
+
+    class BinarySearch {
+        +binary_search(arr, target)
+        --
+        low : starting index
+        high : ending index
+        mid : middle index
+        --
+        Compare middle element
+        Update low or high
+        Return index or -1
+    }
+
+    class BinaryInput {
+        +read_sorted_array()
+        +read_target()
+    }
+
+    class BinaryOutput {
+        +display_result()
+    }
+
+    BinaryInput --> BinarySearch : Calls
+    BinarySearch --> BinaryOutput : Returns index
+}
+
+note bottom of LinearSearch
+  Best: O(1)
+  Average: O(n)
+  Worst: O(n)
+end note
+
+note bottom of BinarySearch
+  Best: O(1)
+  Average: O(log n)
+  Worst: O(log n)
+
+  Requires a sorted array.
+end note
+
+legend bottom
+  Purpose: Show the code-level structure
+  and logic of both search programs.
+endlegend
+
+@enduml
+```

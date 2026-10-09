@@ -1,0 +1,46 @@
+```plantuml
+@startuml Linear_Binary_Level3
+
+title Linear and Binary Search - C4 Level 3
+left to right direction
+
+skinparam shadowing false
+skinparam packageStyle rectangle
+skinparam defaultTextAlignment center
+
+actor "Student" as student
+
+package "Linear Search Program (Python)" {
+
+    rectangle "Input Handler\n\nAccepts array and target" as LInput
+
+    rectangle "linear_search(arr, target)\n\nChecks elements sequentially\nTime: O(n)" as LSearch
+
+    rectangle "Result Handler\n\nDisplays found index\nor not found" as LResult
+
+    LInput --> LSearch : Calls function
+    LSearch --> LResult : Returns index
+}
+
+package "Binary Search Program (Python)" {
+
+    rectangle "Input Handler\n\nAccepts sorted array and target" as BInput
+
+    rectangle "binary_search(arr, target)\n\nDivides search range into halves\nTime: O(log n)" as BSearch
+
+    rectangle "Result Handler\n\nDisplays found index\nor not found" as BResult
+
+    BInput --> BSearch : Calls function
+    BSearch --> BResult : Returns index
+}
+
+student --> LInput : Enters input
+student --> BInput : Enters input
+
+note bottom
+  Purpose: Compare two searching algorithms.
+  Binary Search requires a sorted array.
+end note
+
+@enduml
+```

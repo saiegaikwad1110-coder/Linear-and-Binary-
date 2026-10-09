@@ -1,0 +1,35 @@
+```plantuml
+@startuml Linear_Binary_Level2
+
+title Linear and Binary Search - C4 Level 2
+left to right direction
+
+skinparam shadowing false
+skinparam packageStyle rectangle
+skinparam defaultTextAlignment center
+
+actor "Student" as student
+
+rectangle "Linear and Binary Search System" as system {
+
+    rectangle "Linear Search Program\n(Python)\n\nChecks elements one by one\nTime: O(n)" as linear
+
+    rectangle "Binary Search Program\n(Python)\n\nDivides sorted array into halves\nTime: O(log n)" as binary
+}
+
+rectangle "Python Interpreter" as python
+
+student --> linear : Enters array\nand target
+student --> binary : Enters sorted array\nand target
+
+linear --> python : Executes
+binary --> python : Executes
+
+note bottom of system
+  Purpose:
+  Compare searching algorithms
+  and their time complexity.
+end note
+
+@enduml
+```
